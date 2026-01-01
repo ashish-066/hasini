@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Night Scene</title>
 
 <style>
@@ -175,19 +176,48 @@ html, body {
 }
 
 /* HAPPY NEW YEAR TEXT */
-.newyear-text {
+.newyear-container {
   position: absolute;
   top: 35%;
   width: 100%;
   text-align: center;
+  z-index: 21;
+  opacity: 0;
+  animation: newYearFade 4s ease forwards;
+  animation-delay: 3s;
+}
+
+.newyear-text {
   font-size: 64px;
   font-weight: 600;
   letter-spacing: 4px;
   color: white;
-  opacity: 0;
-  z-index: 21;
-  animation: newYearFade 4s ease forwards;
-  animation-delay: 3s;
+  margin-bottom: 30px;
+}
+
+.wrap-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.wrap-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.wrap-button:active {
+  transform: translateY(0);
 }
 
 @keyframes newYearFade {
@@ -201,6 +231,60 @@ html, body {
   }
 }
 
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  .newyear-text {
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .wrap-button {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+  
+  .moon {
+    width: 80px;
+    height: 80px;
+    top: 50px;
+    right: 50px;
+  }
+  
+  .couple img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .newyear-text {
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+  
+  .wrap-button {
+    padding: 10px 25px;
+    font-size: 12px;
+  }
+  
+  .newyear-container {
+    top: 30%;
+    padding: 0 20px;
+  }
+  
+  .moon {
+    width: 60px;
+    height: 60px;
+    top: 30px;
+    right: 30px;
+  }
+  
+  .couple img {
+    width: 250px;
+  }
+}
+
 
 </style>
 </head>
@@ -208,7 +292,10 @@ html, body {
 <body>
     <canvas id="fireworks"></canvas>
 
-<div class="newyear-text">HAPPY NEW YEAR 🎆</div>
+<div class="newyear-container">
+  <div class="newyear-text">HAPPY NEW YEAR 🎆</div>
+  <button class="wrap-button" onclick="window.location.href='https://h85867966-boop.github.io/hasini/'">lets wrap this year</button>
+</div>
 
 <div class="scene">
 
